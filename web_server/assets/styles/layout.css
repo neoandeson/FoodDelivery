@@ -1,0 +1,16 @@
+:root{
+    --main-color: #fff;
+    --text-color: #72777a;
+}
+
+.navigation-bar{
+
+}
+
+.navigation-bar ul{
+   list-style-type: none; 
+}
+
+a{
+   text-decoration: none;
+}

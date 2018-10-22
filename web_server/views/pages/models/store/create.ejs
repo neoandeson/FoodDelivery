@@ -1,0 +1,98 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Store</h1>
+    <a class="btn btn-primary active" role="button" aria-pressed="true" href="/store">List</a>
+</div>
+
+<form class="form-default" action="/store/create" method="POST">
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Title</span>
+        </div>
+        <input type="text" class="form-control" name="title" aria-describedby="basic-addon1"/>
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Full Title</span>
+        </div>
+        <input type="text" class="form-control" name="fullTitle" aria-describedby="basic-addon1"/>
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Address</span>
+        </div>
+        <input type="text" class="form-control" name="address" aria-describedby="basic-addon1"/>
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Phone</span>
+        </div>
+        <input type="text" class="form-control" name="phone" aria-describedby="basic-addon1"/>
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">City</span>
+        </div>
+        <select class="form-control" name="city">
+            <% data.cities.forEach((city) => { %>
+                <option value="<%= city.id %>"><%= city.name %></option>
+            <% }) %>
+        </select>
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Status</span>
+        </div>
+        <select class="form-control" name="status">
+            <% data.status.forEach((status) => { %>
+                <option value="<%= status.id %>"><%= status.name %></option>
+            <% }) %>
+        </select>
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Store Type</span>
+        </div>
+        <select class="form-control" name="storeType">
+            <% data.storeType.forEach((storeType) => { %>
+                <option value="<%= storeType.id %>"><%= storeType.name %></option>
+            <% }) %>
+        </select>
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Rating</span>
+        </div>
+        <input type="number" class="form-control" name="rating" step="0.01" aria-describedby="basic-addon1"/>
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Time Open</span>
+        </div>
+        <input type="text" class="form-control" name="timeOpen" aria-describedby="basic-addon1"/>
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Time Close</span>
+        </div>
+        <input type="text" class="form-control" name="timeClose" aria-describedby="basic-addon1"/>
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Min Price</span>
+        </div>
+        <input type="text" class="form-control" name="minPrice" aria-describedby="basic-addon1"/>
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Max Price</span>
+        </div>
+        <input type="text" class="form-control" name="maxPrice" aria-describedby="basic-addon1"/>
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Time Prepare</span>
+        </div>
+        <input type="text" class="form-control" name="timePrepare" aria-describedby="basic-addon1"/>
+    </div>
+    <input class="btn btn-primary float-right" type="submit" value="Add">
+</form>

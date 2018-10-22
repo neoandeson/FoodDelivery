@@ -1,0 +1,87 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Store</h1>
+    <a class="btn btn-primary active" role="button" aria-pressed="true" href="/user">List</a>
+</div>
+
+<form class="form-default" action="/user/create" method="POST">
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Username</span>
+        </div>
+        <input type="text" class="form-control" name="username" aria-describedby="basic-addon1"/>
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Password</span>
+        </div>
+        <input type="password" class="form-control" name="password" aria-describedby="basic-addon1"/>
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Email</span>
+        </div>
+        <input type="email" class="form-control" name="email" aria-describedby="basic-addon1"/>
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Sex</span>
+        </div>
+        <div class="form-check form-check-inline">
+            <input type="radio" class="form-check-input" name="sex" value="Male" id="sexMale"/>
+            <label class="form-check-label" for="sexMale">
+                Male
+            </label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input type="radio" class="form-check-input" name="sex" value="Female" id="sexFemale"/>
+            <label class="form-check-label" for="sexFemale">
+                Female
+            </label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input type="radio" class="form-check-input" name="sex" value="Other" id="sexOther"/>
+            <label class="form-check-label" for="sexOther">
+                Other
+            </label>
+        </div>
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Age</span>
+        </div>
+        <input type="number" class="form-control" name="age" step="1" aria-describedby="basic-addon1"/>
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Phone</span>
+        </div>
+        <input type="text" class="form-control" name="phone" aria-describedby="basic-addon1"/>
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Address</span>
+        </div>
+        <input type="text" class="form-control" name="address" aria-describedby="basic-addon1"/>
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">User Role</span>
+        </div>
+        <select class="form-control" name="userRole">
+            <% data.userRole.forEach((userRole) => { %>
+            <option value="<%= userRole.id %>"><%= userRole.name %></option>
+        <% }) %>
+        </select>
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">City</span>
+        </div>
+        <select class="form-control" name="city">
+            <% data.cities.forEach((city) => { %>
+                <option value="<%= city.id %>"><%= city.name %></option>
+            <% }) %>
+        </select>
+    </div>
+    <input class="btn btn-primary float-right" type="submit" value="Add">
+</form>

@@ -1,0 +1,14 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Purchase Type</h1>
+    <a class="btn btn-primary active" role="button" aria-pressed="true" href="/purchaseType">List</a>
+</div>
+
+<form class="form-default" action="/purchaseType/create" method="POST">
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Name</span>
+        </div>
+        <input type="text" class="form-control" name="name" placeholder="Name" aria-label="Name" aria-describedby="basic-addon1"/>
+    </div>
+    <input class="btn btn-primary float-right" type="submit" value="Add">
+</form>

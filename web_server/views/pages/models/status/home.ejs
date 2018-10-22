@@ -1,0 +1,39 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Status</h1>
+    <a class="btn btn-primary active" role="button" aria-pressed="true" href="/status/create">Add</a>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-striped table-sm table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">No.</th>
+                <th scope="col">Name</th>
+                <th scope="col">CreatedAt</th>
+                <th scope="col">UpdatedAt</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% result.forEach(function(type, count){ %>
+                <tr>
+                    <td scope="row"><%= count %></td>
+                    <form action="/status/update" method="POST">
+                        <input type="hidden" name="id" value="<%= type.id %>"/>
+                        <td>
+                            <div class="input-group input-group-sm mb-3">
+                                <input type="text" class="form-control" name="name" value="<%= type.name %>" aria-label="Name" aria-describedby="inputGroup-sizing-sm">
+                            </div>
+                        </td>
+                        <td><%= type.createdAt %></td>
+                        <td><%= type.updatedAt %></td>
+                        <td>
+                            <input type="submit" class="btn btn-sm btn-success" name="btnAction" value="Update"/>
+                            <input type="submit" class="btn btn-sm btn-danger" name="btnAction" value="Delete"/>
+                        </td>
+                    </form>
+                <tr>
+            <% }) %>   
+        </tbody>
+    </table>
+</div>
